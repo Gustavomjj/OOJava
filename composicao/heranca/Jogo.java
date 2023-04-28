@@ -4,30 +4,33 @@ public class Jogo {
 	
 	public static void main(String[] args) {
 		
-		Heroi j1 = new Heroi();
-		j1.andar(Direcao.SUL);
+		Heroi heroi = new Heroi();
+		heroi.andar(Direcao.SUL);
 
-		Monstro j2 = new Monstro();
-		j2.andar(Direcao.OESTE);
-		j2.andar(Direcao.SUL);
+		Monstro monstro = new Monstro();
+		monstro.andar(Direcao.OESTE);
+		monstro.andar(Direcao.SUL);
 		
-		System.out.println(j1.vida);
+		System.out.println("Vida (heroi) = " + heroi.vida);
+		System.out.println("Vida (monstro) = " + monstro.vida);
+								
+		monstro.atacar(heroi);
+		
+		System.out.println("Vida (heroi) = " + heroi.vida);
+		System.out.println("Vida (monstro) = " + monstro.vida);
+		
+		heroi.atacar(monstro);
+
+		System.out.println("Vida (heroi) = " + heroi.vida);
+		System.out.println("Vida (monstro) = " + monstro.vida);
 				
-		System.out.println(j1.x);
-		System.out.println(j1.y);
+		monstro.andar(Direcao.NORTE);
 		
-		System.out.println(j2.x);
-		System.out.println(j2.y);
+		heroi.atacar(monstro);
 		
-		j2.atacar(j1);
+		System.out.println("Vida (heroi) = " + heroi.vida);
+		System.out.println("Vida (monstro) = " + monstro.vida);
 		
-		System.out.println(j1.vida);
-		System.out.println(j2.vida);
-		
-		j1.atacar(j2);
-		
-		System.out.println(j1.vida);
-		System.out.println(j2.vida);
 		
 		
 		
